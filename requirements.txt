@@ -1,1 +1,1 @@
-pip install pandas-profiling
+pandas-profiling==3.6.6 
