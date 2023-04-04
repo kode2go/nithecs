@@ -1,1 +1,2 @@
 pandas-profiling==3.6.6 
+streamlit_pandas_profiling==0.1.3
