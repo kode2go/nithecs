@@ -2,8 +2,6 @@
 # https://ydata-profiling.ydata.ai/docs/master/pages/use_cases/custom_report_appearance.html
 # store on github: https://github.com/kode2go/nithecs/tree/main/nithecs
 
-# test 123
-
 import numpy as np
 import pandas as pd
 from ydata_profiling import ProfileReport

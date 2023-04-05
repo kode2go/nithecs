@@ -23,7 +23,6 @@ html_path = os.path.join(script_dir, html_file)
 # html_file = 'your_report.html'
 firefox_path = r'C:\Program Files\Mozilla Firefox\firefox.exe'
 
-# subprocess.run([firefox_path, html_path])
+subprocess.run([firefox_path, html_path])
 
-iris = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', header=None, names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
-print(iris.head())
+
