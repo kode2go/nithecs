@@ -6,6 +6,7 @@ Lecture 2 - 12 April @ 14:00
 
 Agenda:
     1. Admin - Github Repo, Discussions, Form 2
+        https://forms.office.com/r/ML2AjGd3eX
     2. Review of lecture 1
     3. Input/Output
     4. Data wrangling, aggregation, merging, joining 
@@ -22,7 +23,8 @@ How should you learn from these lectures???
 Online Browser
 https://trinket.io/embed/python3
 
-
+Install Anaconda:
+    
 Windows:
 https://www.youtube.com/watch?v=WUeBzT43JyY
 
@@ -34,7 +36,7 @@ Linux
 https://youtu.be/dGm10q_y3xw
 
 
-Python Community - PyConZA
+- Python Community - PyConZA
 
 """
 
@@ -50,6 +52,12 @@ df = pd.read_csv(url, header=None, names=['sepal_length', 'sepal_width', 'petal_
 
 # df = pd.read_csv('iris.csv', header=None, names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
 
+# file_path = 'c://users//username//folder//'
+
+# df.to_csv(file_path+'dummy_data.csv')
+
+# df.to_csv('./newfolder/dummy_data.csv')
+
 df["sepal_length"]
 type(df["sepal_length"])
 type(df["sepal_length"].values)
@@ -63,10 +71,6 @@ df.query("sepal_length > 5").assign(sepal_ratio=df["sepal_width"] / df["sepal_le
 dfa = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6]})
 
 dfa = dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])
-
-# Filtering & Grouping
-
-
 
 # column names can be accessed like an attribute
 
@@ -133,6 +137,7 @@ This process typically involves several steps, such as removing duplicates, hand
 df_med = pd.read_csv('med_data.csv')
 
 df_med_cp = df_med
+
 
 """
 Now you will notice the following:
@@ -240,6 +245,7 @@ An aggregation is a GroupBy operation that reduces the dimension of the grouping
 max, mean, any, min, quantile, sum, std
 """
 
+print("groupby agg")
 print(df.groupby("class").mean())
 print(df.groupby("class")[["sepal_length","sepal_width"]].mean())
 
