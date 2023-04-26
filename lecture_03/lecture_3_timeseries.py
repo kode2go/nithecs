@@ -17,6 +17,9 @@ Form:
 
 https://pandas.pydata.org/docs/user_guide/timeseries.html
 
+https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-to-time-series-analysis/
+https://www.dataquest.io/blog/tutorial-time-series-analysis-with-pandas/
+
 
 """
 import pandas as pd
@@ -44,7 +47,7 @@ df_split_date['day'] = ds.dt.day
 # df2 = pd.read_csv('weather.csv',header=0, infer_datetime_format=True, parse_dates=[0], index_col=[0])
 
 '''Inspect the dataset to get a sense of its structure '''
-# rpp.generate_profile_report(df)
+rpp.generate_profile_report(df)
 
 
 # # Print the first few rows
@@ -62,7 +65,7 @@ df_split_date['day'] = ds.dt.day
 ''' Visualize the data to identify trends, seasonality, and outliers '''
 
 # Plot the TemperatureC and DewpointC columns
-sns.lineplot(data=df[['temp', 'precip']])
+sns.lineplot(data=df[['count']])
 
 # Set the title and axis labels
 sns.set(rc={'figure.figsize':(11, 4)})
@@ -78,7 +81,7 @@ plt.show()
 from statsmodels.tsa.seasonal import seasonal_decompose
 
 # Perform time series decomposition
-decomposition = seasonal_decompose(df['temp'], model='additive', period=12)
+decomposition = seasonal_decompose(df['count'], model='additive', period=12)
 
 # Plot the decomposition
 trend = decomposition.trend
@@ -86,7 +89,7 @@ seasonal = decomposition.seasonal
 residual = decomposition.resid
 
 plt.subplot(411)
-plt.plot(df['temp'], label='Original')
+plt.plot(df['count'], label='Original')
 plt.legend(loc='upper left')
 
 plt.subplot(412)
@@ -131,4 +134,5 @@ forecast = model_fit.predict(start=len(df), end=len(df)+11, typ='levels')
 plt.plot(df.index, df['temp'], label='Observed')
 plt.plot(forecast.index, forecast.values, label='Forecast')
 plt.legend()
+plt.xticks(rotation='vertical')
 plt.show()

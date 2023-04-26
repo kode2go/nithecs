@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Apr 19 07:45:36 2023
+1. multiple figures
+2. multidimensional
 
 @author: BBarsch
 """
