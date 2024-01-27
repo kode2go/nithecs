@@ -108,9 +108,9 @@ import psycopg2
 
 conn = psycopg2.connect(
     host="localhost",
-    database="oct_21_sup",
-    user="postgres",
-    password="user"
+    database="xx",
+    user="xx",
+    password="xx"
 )
 
 # Query the database for all data in a table
